@@ -18,8 +18,10 @@ public class DistortD4JListener implements IListener<MessageReceivedEvent> {
 	public void handle(MessageReceivedEvent event) {
 		try {
 			IMessage message = event.getMessage();
+			String content = message.getContent();
 
-			CommandUtil.executeCommand(registry, CommandUtil.getArgsFromText(message.getContent()), message);
+			if (content.startsWith("."))
+				CommandUtil.executeCommand(registry, CommandUtil.getArgsFromText(content.substring(1, content.length())), message);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
