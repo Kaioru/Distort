@@ -1,9 +1,11 @@
 package co.kaioru.distort.d4j.command;
 
+import co.kaioru.retort.command.ICommand;
 import co.kaioru.retort.util.builder.CommandBuilder;
 import sx.blah.discord.handle.obj.IMessage;
 
 import java.util.LinkedList;
+import java.util.List;
 
 public class D4JCommandBuilder extends CommandBuilder<D4JCommandBuilder, D4JCommand, D4JCommandExecutable> {
 
@@ -23,6 +25,16 @@ public class D4JCommandBuilder extends CommandBuilder<D4JCommandBuilder, D4JComm
 			@Override
 			public String getDesc() {
 				return desc;
+			}
+
+			@Override
+			public List<String> getAliases() {
+				return aliases;
+			}
+
+			@Override
+			public List<ICommand> getCommands() {
+				return commands;
 			}
 
 			@Override

@@ -1,9 +1,11 @@
 package co.kaioru.distort.jc.command;
 
+import co.kaioru.retort.command.ICommand;
 import co.kaioru.retort.util.builder.CommandBuilder;
 import de.btobastian.javacord.entities.message.Message;
 
 import java.util.LinkedList;
+import java.util.List;
 
 public class JCCommandBuilder extends CommandBuilder<JCCommandBuilder, JCCommand, JCCommandExecutable> {
 
@@ -23,6 +25,16 @@ public class JCCommandBuilder extends CommandBuilder<JCCommandBuilder, JCCommand
 			@Override
 			public String getDesc() {
 				return desc;
+			}
+
+			@Override
+			public List<String> getAliases() {
+				return aliases;
+			}
+
+			@Override
+			public List<ICommand> getCommands() {
+				return commands;
 			}
 
 			@Override
