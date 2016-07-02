@@ -8,12 +8,14 @@ import sx.blah.discord.modules.IModule;
 public class DistortD4JModule implements IModule {
 
 	private IDiscordClient client;
-	private DistortD4JListener listener;
+	private static CommandRegistry registry;
+	private static DistortD4JListener listener;
 
 	@Override
 	public boolean enable(IDiscordClient client) {
 		this.client = client;
-		this.listener = new DistortD4JListener(new CommandRegistry());
+		this.registry = new CommandRegistry();
+		this.listener = new DistortD4JListener(registry);
 
 		client.getDispatcher().registerListener(listener);
 		return true;
@@ -42,6 +44,14 @@ public class DistortD4JModule implements IModule {
 	@Override
 	public String getMinimumDiscord4JVersion() {
 		return "2.4.0";
+	}
+
+	public static CommandRegistry getRegistry() {
+		return registry;
+	}
+
+	public static DistortD4JListener getListener() {
+		return listener;
 	}
 
 }
