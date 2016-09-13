@@ -9,6 +9,7 @@ import sx.blah.discord.handle.obj.IMessage;
 public class DistortD4JListener implements IListener<MessageReceivedEvent> {
 
     private final CommandRegistry registry;
+    private String prefix = ".";
 
     public DistortD4JListener(CommandRegistry registry) {
         this.registry = registry;
@@ -20,8 +21,8 @@ public class DistortD4JListener implements IListener<MessageReceivedEvent> {
             IMessage message = event.getMessage();
             String content = message.getContent();
 
-            if (content.startsWith("."))
-                CommandUtil.executeCommand(registry, CommandUtil.getArgsFromText(content.substring(1, content.length())), message);
+            if (content.startsWith(prefix))
+                CommandUtil.executeCommand(registry, CommandUtil.getArgsFromText(content.substring(prefix.length(), content.length())), message);
         } catch (Exception e) {
             e.printStackTrace();
         }

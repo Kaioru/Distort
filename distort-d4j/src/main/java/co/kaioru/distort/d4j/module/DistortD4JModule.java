@@ -43,7 +43,7 @@ public class DistortD4JModule implements IModule {
 
 	@Override
 	public String getMinimumDiscord4JVersion() {
-		return "2.4.0";
+		return "2.6.0";
 	}
 
 	public static CommandRegistry getRegistry() {
