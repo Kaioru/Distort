@@ -23,6 +23,12 @@ Store the module in a variable! (and load it ofcourse!)
 module = new DistortD4JModule();
 IDiscordClient#getModuleLoader().loadModule(module);
 ```
+### Changing command prefix
+The default prefix for Distort is '.'
+You can change it by using
+```java
+module.getListener.setPrefix("String here!");
+```
 ### With the Command Builder
 ```java
 CommandRegistry reg = module.getRegistry();

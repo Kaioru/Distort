@@ -28,4 +28,12 @@ public class DistortD4JListener implements IListener<MessageReceivedEvent> {
         }
     }
 
+    public String getPrefix() {
+        return prefix;
+    }
+
+    public void setPrefix(String prefix) {
+        this.prefix = prefix;
+    }
+
 }
