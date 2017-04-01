@@ -34,7 +34,7 @@ DistortDjarListener listener = new DistortDjarListener(registry);
 // But with DJarCommand instead of D4JCommand
 registry.registerCommand(new DJarCommandBuilder("ping")
 		.build((args, msg) -> {
-			msg.reply("pong!");
+			event.getGroup().sendMessage("pong!");
 		}));
 
 DiscordAPI api = new DiscordBuilder("token").build().login();
