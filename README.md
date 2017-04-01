@@ -7,6 +7,24 @@ It is built with the purpose of easily creating commands (with the use of builde
 At the current point, JavaCord and JDA (discord.jar is on its way) is not fully supported. However, base work for the libraries are finished but require further touching up.
 
 # Usage - Discord.jar
+## Adding the dependency
+### Maven
+```
+<repositories>
+	<repository>
+		<id>jitpack.io</id>
+		<url>https://jitpack.io</url>
+	</repository>
+</repositories>
+```
+```
+<dependency>
+	<groupId>com.github.kaioru.distort</groupId>
+	<artifactId>distort-djar</artifactId>
+	<version>d90c7f40f0</version>
+</dependency>
+```
+
 ## Adding the Listener
 ```java
 CommandRegistry registry = new CommandRegistry();
