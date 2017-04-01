@@ -36,6 +36,7 @@ registry.registerCommand(new DJarCommandBuilder("ping")
 		.build((args, msg) -> {
 			event.getGroup().sendMessage("pong!");
 		}));
+listener.setPrefix("distort!"); // Sets the command prefix. eg. distort!ping
 
 DiscordAPI api = new DiscordBuilder("token").build().login();
 api.getEventManager().registerListener(listener);
