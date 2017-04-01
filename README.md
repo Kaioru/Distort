@@ -15,7 +15,7 @@ DistortDjarListener listener = new DistortDjarListener(registry);
 // You can register commands to the registry similar to the Discord4J way..
 // But with DJarCommand instead of D4JCommand
 
-DiscordAPI api = new DiscordAPI("email", "pass").login();
+DiscordAPI api = new DiscordBuilder("token").build().login();
 api.getEventManager().registerListener(listener);
 ```
 
