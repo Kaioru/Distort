@@ -33,7 +33,7 @@ DistortDjarListener listener = new DistortDjarListener(registry);
 // You can register commands to the registry similar to the Discord4J way..
 // But with DJarCommand instead of D4JCommand
 registry.registerCommand(new DJarCommandBuilder("ping")
-		.build((args, msg) -> {
+		.build((args, event) -> {
 			event.getGroup().sendMessage("pong!");
 		}));
 listener.setPrefix("distort!"); // Sets the command prefix. eg. distort!ping
