@@ -12,7 +12,8 @@
         <module>distort-d4j</module>
         <module>distort-jc</module>
         <module>distort-jda</module>
-    </modules>
+		<module>distort-djar</module>
+	</modules>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
