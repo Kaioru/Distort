@@ -4,7 +4,20 @@ Distort is an implementation built on top of Retort, a base command framework to
 
 It is built with the purpose of easily creating commands (with the use of builders, annotations etc).
 
-At the current point, JavaCord and JDA is not fully supported. However, base work for the libraries are finished but require further touching up.
+At the current point, JavaCord and JDA (discord.jar is on its way) is not fully supported. However, base work for the libraries are finished but require further touching up.
+
+# Usage - Discord.jar
+## Adding the Listener
+```java
+CommandRegistry registry = new CommandRegistry();
+DistortDjarListener listener = new DistortDjarListener(registry);
+
+// You can register commands to the registry similar to the Discord4J way..
+// But with DJarCommand instead of D4JCommand
+
+DiscordAPI api = new DiscordAPI("email", "pass").login();
+api.getEventManager().registerListener(listener);
+```
 
 # Usage - Discord4J
 ## As a required external module
