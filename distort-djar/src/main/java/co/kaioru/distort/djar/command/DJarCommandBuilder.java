@@ -17,12 +17,12 @@ public class DJarCommandBuilder extends CommandBuilder<DJarCommandBuilder, DJarC
 
 			@Override
 			public String getName() {
-				return getName();
+				return name;
 			}
 
 			@Override
 			public String getDesc() {
-				return getDesc();
+				return desc;
 			}
 
 			@Override
