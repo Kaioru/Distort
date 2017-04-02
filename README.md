@@ -4,43 +4,7 @@ Distort is an implementation built on top of Retort, a base command framework to
 
 It is built with the purpose of easily creating commands (with the use of builders, annotations etc).
 
-At the current point, JavaCord and JDA (discord.jar is on its way) is not fully supported. However, base work for the libraries are finished but require further touching up.
-
-# Usage - Discord.jar
-## Adding the dependency
-### Maven
-```
-<repositories>
-	<repository>
-		<id>jitpack.io</id>
-		<url>https://jitpack.io</url>
-	</repository>
-</repositories>
-```
-```
-<dependency>
-	<groupId>com.github.kaioru.distort</groupId>
-	<artifactId>distort-djar</artifactId>
-	<version>d90c7f40f0</version>
-</dependency>
-```
-
-## Adding the Listener
-```java
-CommandRegistry registry = new CommandRegistry();
-DistortDjarListener listener = new DistortDjarListener(registry);
-
-// You can register commands to the registry similar to the Discord4J way..
-// But with DJarCommand instead of D4JCommand
-registry.registerCommand(new DJarCommandBuilder("ping")
-		.build((args, event) -> {
-			event.getGroup().sendMessage("pong!");
-		}));
-listener.setPrefix("distort!"); // Sets the command prefix. eg. distort!ping
-
-DiscordAPI api = new DiscordBuilder("token").build().login();
-api.getEventManager().registerListener(listener);
-```
+At the current point, JavaCord and JDA is not fully supported. However, base work for the libraries are finished but require further touching up.
 
 # Usage - Discord4J
 ## As a required external module
@@ -115,4 +79,40 @@ reg.registerCommand(new D4JCommandBuilder("test")
     .build((args, msg) -> {
         msg.reply(args.toString());
     }));
+```
+# Usage - Discord.jar
+Incase you got punk'd but still use it anyway.
+## Adding the dependency
+### Maven
+```
+<repositories>
+	<repository>
+		<id>jitpack.io</id>
+		<url>https://jitpack.io</url>
+	</repository>
+</repositories>
+```
+```
+<dependency>
+	<groupId>com.github.kaioru.distort</groupId>
+	<artifactId>distort-djar</artifactId>
+	<version>d90c7f40f0</version>
+</dependency>
+```
+
+## Adding the Listener
+```java
+CommandRegistry registry = new CommandRegistry();
+DistortDjarListener listener = new DistortDjarListener(registry);
+
+// You can register commands to the registry similar to the Discord4J way..
+// But with DJarCommand instead of D4JCommand
+registry.registerCommand(new DJarCommandBuilder("ping")
+		.build((args, event) -> {
+			event.getGroup().sendMessage("pong!");
+		}));
+listener.setPrefix("distort!"); // Sets the command prefix. eg. distort!ping
+
+DiscordAPI api = new DiscordBuilder("token").build().login();
+api.getEventManager().registerListener(listener);
 ```
