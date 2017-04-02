@@ -1,7 +1,7 @@
 package co.kaioru.distort.jda.command;
 
 import co.kaioru.retort.command.ICommandExecutable;
-import net.dv8tion.jda.entities.Message;
+import net.dv8tion.jda.core.events.message.MessageReceivedEvent;
 
 import java.util.LinkedList;
 
@@ -12,6 +12,6 @@ public interface JDACommandExecutable extends ICommandExecutable {
 		return;
 	}
 
-	void execute(LinkedList<String> args, Message message) throws Exception;
+	void execute(LinkedList<String> args, MessageReceivedEvent event) throws Exception;
 
 }

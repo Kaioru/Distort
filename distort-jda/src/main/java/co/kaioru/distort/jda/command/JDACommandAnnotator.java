@@ -4,7 +4,7 @@ import co.kaioru.retort.command.ICommand;
 import co.kaioru.retort.util.annotation.AnnotatedCommand;
 import co.kaioru.retort.util.annotation.CommandAnnotator;
 import com.google.common.collect.Lists;
-import net.dv8tion.jda.entities.Message;
+import net.dv8tion.jda.core.events.message.MessageReceivedEvent;
 
 import java.lang.reflect.Method;
 import java.util.Arrays;
@@ -51,9 +51,9 @@ public class JDACommandAnnotator extends CommandAnnotator<JDACommandAnnotator, J
 			}
 
 			@Override
-			public void execute(LinkedList<String> args, Message message) throws Exception {
+			public void execute(LinkedList<String> args, MessageReceivedEvent event) throws Exception {
 				method.setAccessible(true);
-				method.invoke(object, args, message);
+				method.invoke(object, args, event);
 			}
 
 		});
