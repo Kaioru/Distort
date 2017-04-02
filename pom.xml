@@ -67,7 +67,7 @@
         <dependency>
             <groupId>com.github.kaioru</groupId>
             <artifactId>Retort</artifactId>
-            <version>9c1460a384</version>
+            <version>1.0.0</version>
         </dependency>
         <dependency>
             <groupId>com.google.guava</groupId>
