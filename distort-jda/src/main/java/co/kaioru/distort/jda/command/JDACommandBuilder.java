@@ -2,7 +2,7 @@ package co.kaioru.distort.jda.command;
 
 import co.kaioru.retort.command.ICommand;
 import co.kaioru.retort.util.builder.CommandBuilder;
-import net.dv8tion.jda.entities.Message;
+import net.dv8tion.jda.core.events.message.MessageReceivedEvent;
 
 import java.util.LinkedList;
 import java.util.List;
@@ -38,8 +38,8 @@ public class JDACommandBuilder extends CommandBuilder<JDACommandBuilder, JDAComm
 			}
 
 			@Override
-			public void execute(LinkedList<String> args, Message message) throws Exception {
-				executor.execute(args, message);
+			public void execute(LinkedList<String> args, MessageReceivedEvent event) throws Exception {
+				executor.execute(args, event);
 			}
 
 		};
