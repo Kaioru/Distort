@@ -14,7 +14,7 @@ public class AnnotationFactoryBuilder extends BaseAnnotationFactoryBuilder<Comma
         AnnotationFactoryBuilder builder = new AnnotationFactoryBuilder();
 
         builder.withAdapter(ReflectionGeneratorBuilder.create().build())
-                .withAdapter(new CommandAnnotationGenerator<>(CommandContext.class, Void.class))
+                .withAdapter(new CommandAnnotationGenerator<>(CommandContext.class, Void.TYPE))
                 .withAdapter(new ReferenceAnnotationGenerator<>())
                 .withAdapter(new AliasAnnotationProcessor<>())
                 .withAdapter(new DescriptionAnnotationProcessor<>());

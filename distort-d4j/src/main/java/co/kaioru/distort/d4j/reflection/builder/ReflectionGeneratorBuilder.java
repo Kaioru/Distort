@@ -13,7 +13,7 @@ public class ReflectionGeneratorBuilder extends BaseReflectionGeneratorBuilder<C
     }
 
     public static IReflectionGeneratorBuilder<CommandContext, Void> create() {
-        ReflectionGeneratorBuilder builder = new ReflectionGeneratorBuilder(Void.class);
+        ReflectionGeneratorBuilder builder = new ReflectionGeneratorBuilder(Void.TYPE);
 
         builder.withProvider(new ContextReflectionProvider<>(CommandContext.class))
                 .withProvider(new BooleanReflectionProvider<>())
