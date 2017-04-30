@@ -12,9 +12,9 @@ public class CommandRegistry extends BaseCommandRegistry<CommandContext, Void> {
         super("registry");
     }
 
-    public Void execute(IDiscordClient client, IMessage message, IUser user) throws CommandException {
+    public Void execute(IDiscordClient client, IMessage message, IUser user, String content) throws CommandException {
         CommandContext context = new CommandContext(client, message, user);
-        return execute(context, message.getContent());
+        return execute(context, content);
     }
 
 }
