@@ -1,3 +1,3 @@
 Distort
 =======
-Distort is a Discord API implementation built on top of Retort.
+Distort is a command framework for Discord built with Retort.
