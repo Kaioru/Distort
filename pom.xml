@@ -50,7 +50,7 @@
         <dependency>
             <groupId>co.kaioru</groupId>
             <artifactId>retort</artifactId>
-            <version>7229ef536b</version>
+            <version>ac2de66fc3</version>
         </dependency>
         <dependency>
             <groupId>junit</groupId>
