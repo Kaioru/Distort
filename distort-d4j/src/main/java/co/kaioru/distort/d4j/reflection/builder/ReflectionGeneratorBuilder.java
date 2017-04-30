@@ -1,6 +1,7 @@
 package co.kaioru.distort.d4j.reflection.builder;
 
 import co.kaioru.distort.d4j.CommandContext;
+import co.kaioru.distort.d4j.reflection.provider.DiscordClientReflectionProvider;
 import co.kaioru.distort.d4j.reflection.provider.MessageReflectionProvider;
 import co.kaioru.retort.reflection.builder.BaseReflectionGeneratorBuilder;
 import co.kaioru.retort.reflection.builder.IReflectionGeneratorBuilder;
@@ -21,6 +22,7 @@ public class ReflectionGeneratorBuilder extends BaseReflectionGeneratorBuilder<C
                 .withProvider(new IntegerReflectionProvider<>())
                 .withProvider(new DoubleReflectionProvider<>())
                 .withProvider(new FloatReflectionProvider<>())
+                .withProvider(new DiscordClientReflectionProvider())
                 .withProvider(new MessageReflectionProvider());
         return builder;
     }
