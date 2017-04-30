@@ -9,15 +9,6 @@ public abstract class ReflectionGenerator extends AbstractReflectionGenerator<Co
 
     public ReflectionGenerator(Class<Void> outputClass) {
         super(outputClass);
-
-        registerProvider(new ContextReflectionProvider<>(CommandContext.class));
-        registerProvider(new BooleanReflectionProvider<>());
-        registerProvider(new StringReflectionProvider<>());
-        registerProvider(new IntegerReflectionProvider<>());
-        registerProvider(new DoubleReflectionProvider<>());
-        registerProvider(new FloatReflectionProvider<>());
-
-        registerProvider(new MessageReflectionProvider());
     }
 
 }
