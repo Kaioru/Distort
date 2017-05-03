@@ -18,7 +18,7 @@ subprojects {
 
     dependencies {
         compile "org.jetbrains.kotlin:kotlin-stdlib-jre8:$kotlin_version"
-        compile 'co.kaioru:avoid:11d212ee03'
+        compile 'co.kaioru:avoid:26977cf3bb'
         testCompile 'junit:junit:4.12'
     }
 
