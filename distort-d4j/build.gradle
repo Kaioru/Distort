@@ -1,0 +1,7 @@
+repositories {
+    jcenter()
+}
+
+dependencies {
+    compile 'com.github.austinv11:Discord4j:2.8.0'
+}
