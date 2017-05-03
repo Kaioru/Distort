@@ -1,2 +1,3 @@
 rootProject.name = 'distort'
+include 'distort-d4j'
 

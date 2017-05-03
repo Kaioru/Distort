@@ -1,8 +1,38 @@
-group 'co.kaioru'
-version '1.0.0-SNAPSHOT'
+allprojects {
+    group 'co.kaioru'
+    version '1.0.0-SNAPSHOT'
+}
+
+subprojects {
+    apply plugin: 'java'
+    apply plugin: 'kotlin'
+    apply plugin: "jacoco"
+
+    sourceCompatibility = 1.8
+    targetCompatibility = 1.8
+
+    repositories {
+        mavenCentral()
+        maven { url 'https://jitpack.io' }
+    }
+
+    dependencies {
+        compile "org.jetbrains.kotlin:kotlin-stdlib-jre8:$kotlin_version"
+        compile 'co.kaioru:avoid:11d212ee03'
+        testCompile 'junit:junit:4.12'
+    }
+
+    jacocoTestReport {
+        reports {
+            xml.enabled true
+            xml.destination "${buildDir}/reports/jacoco/report.xml"
+        }
+    }
+}
 
 buildscript {
     ext.kotlin_version = '1.1.2-2'
+    ext.retort_version = '2.0.0'
 
     repositories {
         mavenCentral()
@@ -10,14 +40,4 @@ buildscript {
     dependencies {
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
     }
-}
-
-apply plugin: 'kotlin'
-
-repositories {
-    mavenCentral()
-}
-
-dependencies {
-    compile "org.jetbrains.kotlin:kotlin-stdlib-jre8:$kotlin_version"
 }
