@@ -18,7 +18,7 @@ subprojects {
 
     dependencies {
         compile "org.jetbrains.kotlin:kotlin-stdlib-jre8:$kotlin_version"
-        compile 'co.kaioru:avoid:26977cf3bb'
+        compile "co.kaioru:avoid:$avoid_version"
         testCompile 'junit:junit:4.12'
     }
 
@@ -32,7 +32,7 @@ subprojects {
 
 buildscript {
     ext.kotlin_version = '1.1.2-2'
-    ext.retort_version = '2.0.0'
+    ext.avoid_version = '1.0.0'
 
     repositories {
         mavenCentral()
