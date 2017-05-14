@@ -6,7 +6,7 @@ import co.kaioru.retort.annotation.impl.adapter.basicProcessors
 
 class D4JAnnotationBuilder : SimpleAnnotationBuilder<D4JContext>() {
     init {
-        registerAdapters(basicGenerators(D4JContext::class.java, Void::class.java))
+        registerAdapters(basicGenerators(D4JContext::class.java, Void.TYPE))
         registerAdapters(basicProcessors())
     }
 }

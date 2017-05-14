@@ -6,7 +6,7 @@ import co.kaioru.retort.annotation.impl.adapter.basicProcessors
 
 class JDAAnnotationBuilder : SimpleAnnotationBuilder<JDAContext>() {
     init {
-        registerAdapters(basicGenerators(JDAContext::class.java, Void::class.java))
+        registerAdapters(basicGenerators(JDAContext::class.java, Void.TYPE))
         registerAdapters(basicProcessors())
     }
 }
